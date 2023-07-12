@@ -1,0 +1,10 @@
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\bin\Debug\NetworkNumGame.exe.config
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\bin\Debug\NetworkNumGame.exe
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\bin\Debug\NetworkNumGame.pdb
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\obj\Debug\NetworkNumGame.csproj.AssemblyReference.cache
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\obj\Debug\NetworkNumGame.MainForm.resources
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\obj\Debug\NetworkNumGame.Properties.Resources.resources
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\obj\Debug\NetworkNumGame.csproj.GenerateResource.cache
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\obj\Debug\NetworkNumGame.csproj.CoreCompileInputs.cache
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\obj\Debug\NetworkNumGame.exe
+C:\git\for_uni\NetworkNumGame\NetworkNumGame\obj\Debug\NetworkNumGame.pdb
