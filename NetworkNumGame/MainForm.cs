@@ -45,8 +45,13 @@ namespace NetworkNumGame
                         Score = Score + decidea.NowA;
                     }
 
-                    decidea.ResetA();
-                    TextMemo.AppendText((i + 1) + " 新しいQを入力\r\n");
+                    TextResult.Clear();
+                    TextResult.AppendText("現在の点数 : " + Score);
+
+                    TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " スコア更新 / 新しいQを入力\r\n");
+                    
+                    decidea.ResetA(); // アウトおよび正解になったのでAを初期値に
+                    
 
                     await Task.Run(() =>
                     {
@@ -64,12 +69,14 @@ namespace NetworkNumGame
                 else
                 {
                     Score = Score + decidea.NowA;
-                    decidea.IncreaseA();
-                    TextMemo.AppendText((i + 1) + " スコア更新\r\n");
-                }
 
-                TextResult.Clear();
-                TextResult.AppendText("現在の点数 : " + Score);
+                    TextResult.Clear();
+                    TextResult.AppendText("現在の点数 : " + Score);
+
+                    TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " スコア更新\r\n");
+
+                    decidea.IncreaseA();
+                }
 
             }
 
