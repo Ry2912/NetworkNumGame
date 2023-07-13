@@ -9,10 +9,10 @@ namespace NetworkNumGame
     class DecideA
     {
         private const int init = 1; // 初期値
-        private const int thresholdCount = 10; // しきい値
+        private const int thresholdCount = 10; // しきい値、色々変えよう！！
 
-        public int NowA = init; // 現在のA
-        public int Q = 0; // 入力されたQ
+        private int NowA = init; // 現在のA
+        private int Q = 0; // 入力されたQ
 
         private int count = 0;
         private int OutFlag = 0;
@@ -20,6 +20,19 @@ namespace NetworkNumGame
         public DecideA()
         {
 
+        }
+
+        public int GetNowA()
+        {
+            return NowA;
+        }
+        public int GetQ()
+        {
+            return Q;
+        }
+        public void SetQ(int Q)
+        {
+            this.Q = Q;
         }
 
         // Aを増加させる関数、ここを弄る必要あり

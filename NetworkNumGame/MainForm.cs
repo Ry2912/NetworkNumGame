@@ -29,23 +29,23 @@ namespace NetworkNumGame
 
         private async void ButtonStart_Click(object sender, EventArgs e)
         {
-            decidea.Q = (int)NUD.Value;
+            decidea.SetQ((int)NUD.Value);
 
             for (int i = 0; i < 100000; i++)
             {
-                if (decidea.NowA >= decidea.Q)
+                if (decidea.GetNowA() >= decidea.GetQ())
                 {
-                    if (decidea.NowA > decidea.Q)
+                    if (decidea.GetNowA() > decidea.GetQ())
                     {
-                        Score = Score - ((decidea.NowA - decidea.Q) * 200);
-                        TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " out / 新しいQを入力\r\n");
+                        Score = Score - ((decidea.GetNowA() - decidea.GetQ()) * 200);
+                        TextMemo.AppendText((i + 1) + "   A = " + decidea.GetNowA() + " out / 新しいQを入力\r\n");
 
                         decidea.SetOutFlag(); // outフラグをDecideAクラスに立てる
                     }
                     else
                     {
-                        Score = Score + decidea.NowA;
-                        TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " success / 新しいQを入力\r\n");
+                        Score = Score + decidea.GetNowA();
+                        TextMemo.AppendText((i + 1) + "   A = " + decidea.GetNowA() + " success / 新しいQを入力\r\n");
 
                         decidea.RemoveOutFlag(); // outフラグをDecideAクラスから消す
                     }
@@ -64,7 +64,7 @@ namespace NetworkNumGame
                         {
                             if (flag == 1)
                             {
-                                decidea.Q = (int)NUD.Value;
+                                decidea.SetQ((int)NUD.Value);
                                 flag = 0;
                                 break;
                             }
@@ -73,12 +73,13 @@ namespace NetworkNumGame
                 }
                 else
                 {
-                    Score = Score + decidea.NowA;
+                    Score = Score + decidea.GetNowA();
 
-                    TextResult.Clear();
-                    TextResult.AppendText("現在の点数 : " + Score);
 
-                    TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " safe\r\n");
+                    // ↓これ表示させると時間食う
+                    //TextResult.Clear();
+                    //TextResult.AppendText("現在の点数 : " + Score);
+                    // TextMemo.AppendText((i + 1) + "   A = " + decidea.GetNowA() + " safe\r\n");
 
                     decidea.IncreaseA();
                 }
@@ -86,6 +87,9 @@ namespace NetworkNumGame
             }
 
             TextMemo.AppendText("end\r\n");
+            
+            TextResult.Clear();
+            TextResult.AppendText("現在の点数 : " + Score);
         }
 
         private void ButtonInput_Click(object sender, EventArgs e)
