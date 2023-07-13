@@ -29,7 +29,6 @@ namespace NetworkNumGame
 
         private async void ButtonStart_Click(object sender, EventArgs e)
         {
-            // decidea = new DecideA();
             decidea.Q = (int)NUD.Value;
 
             for (int i = 0; i < 100000; i++)
@@ -39,16 +38,22 @@ namespace NetworkNumGame
                     if (decidea.NowA > decidea.Q)
                     {
                         Score = Score - ((decidea.NowA - decidea.Q) * 200);
+                        TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " out / 新しいQを入力\r\n");
+
+                        decidea.SetOutFlag(); // outフラグをDecideAクラスに立てる
                     }
                     else
                     {
                         Score = Score + decidea.NowA;
+                        TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " success / 新しいQを入力\r\n");
+
+                        decidea.RemoveOutFlag(); // outフラグをDecideAクラスから消す
                     }
 
                     TextResult.Clear();
                     TextResult.AppendText("現在の点数 : " + Score);
 
-                    TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " スコア更新 / 新しいQを入力\r\n");
+                    
                     
                     decidea.ResetA(); // アウトおよび正解になったのでAを初期値に
                     
@@ -73,7 +78,7 @@ namespace NetworkNumGame
                     TextResult.Clear();
                     TextResult.AppendText("現在の点数 : " + Score);
 
-                    TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " スコア更新\r\n");
+                    TextMemo.AppendText((i + 1) + "   A = " + decidea.NowA + " safe\r\n");
 
                     decidea.IncreaseA();
                 }
