@@ -30,6 +30,7 @@ namespace NetworkNumGame
         private async void ButtonStart_Click(object sender, EventArgs e)
         {
             decidea.SetQ((int)NUD.Value);
+            decidea.SetThreshold((int)NUDthreshold.Value);
 
             for (int i = 0; i < 100000; i++)
             {

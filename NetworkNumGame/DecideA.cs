@@ -9,8 +9,8 @@ namespace NetworkNumGame
     class DecideA
     {
         private const int init = 1; // 初期値
-        private const int thresholdCount = 10; // しきい値、色々変えよう！！
-
+        private int Threshold = 10; // しきい値、色々変えよう！！
+        
         private int NowA = init; // 現在のA
         private int Q = 0; // 入力されたQ
 
@@ -34,6 +34,10 @@ namespace NetworkNumGame
         {
             this.Q = Q;
         }
+        public void SetThreshold(int Threshold)
+        {
+            this.Threshold = Threshold;
+        }
 
         // Aを増加させる関数、ここを弄る必要あり
         // 加算＋指数関数システム導入
@@ -41,7 +45,7 @@ namespace NetworkNumGame
         {
             count++;
 
-            if (count < thresholdCount && OutFlag == 0)
+            if (count < Threshold && OutFlag == 0)
             {
                 IncreaseExp(count);
             }

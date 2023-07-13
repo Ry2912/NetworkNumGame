@@ -34,7 +34,10 @@ namespace NetworkNumGame
             this.NUD = new System.Windows.Forms.NumericUpDown();
             this.TextResult = new System.Windows.Forms.TextBox();
             this.ButtonStart = new System.Windows.Forms.Button();
+            this.NUDthreshold = new System.Windows.Forms.NumericUpDown();
+            this.Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDthreshold)).BeginInit();
             this.SuspendLayout();
             // 
             // TextMemo
@@ -84,7 +87,7 @@ namespace NetworkNumGame
             this.TextResult.Multiline = true;
             this.TextResult.Name = "TextResult";
             this.TextResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextResult.Size = new System.Drawing.Size(239, 243);
+            this.TextResult.Size = new System.Drawing.Size(239, 173);
             this.TextResult.TabIndex = 3;
             // 
             // ButtonStart
@@ -97,11 +100,44 @@ namespace NetworkNumGame
             this.ButtonStart.UseVisualStyleBackColor = true;
             this.ButtonStart.Click += new System.EventHandler(this.ButtonStart_Click);
             // 
+            // NUDthreshold
+            // 
+            this.NUDthreshold.Location = new System.Drawing.Point(638, 404);
+            this.NUDthreshold.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.NUDthreshold.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDthreshold.Name = "NUDthreshold";
+            this.NUDthreshold.Size = new System.Drawing.Size(120, 25);
+            this.NUDthreshold.TabIndex = 5;
+            this.NUDthreshold.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // Label
+            // 
+            this.Label.AutoSize = true;
+            this.Label.Location = new System.Drawing.Point(529, 406);
+            this.Label.Name = "Label";
+            this.Label.Size = new System.Drawing.Size(68, 18);
+            this.Label.TabIndex = 6;
+            this.Label.Text = "しきい値";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Label);
+            this.Controls.Add(this.NUDthreshold);
             this.Controls.Add(this.ButtonStart);
             this.Controls.Add(this.TextResult);
             this.Controls.Add(this.NUD);
@@ -111,6 +147,7 @@ namespace NetworkNumGame
             this.Text = "NetworkNumGame";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDthreshold)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +160,8 @@ namespace NetworkNumGame
         private System.Windows.Forms.NumericUpDown NUD;
         private System.Windows.Forms.TextBox TextResult;
         private System.Windows.Forms.Button ButtonStart;
+        private System.Windows.Forms.NumericUpDown NUDthreshold;
+        private System.Windows.Forms.Label Label;
     }
 }
 
